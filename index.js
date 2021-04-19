@@ -11,8 +11,13 @@ mongoose.connect("mongodb+srv://Data:Data2345@cluster0.1mdei.mongodb.net/Student
         app.use(cors());
         app.use(bodyParser.urlencoded({ extended: true }));
         app.use(express.json());
-        app.listen(process.env.PORT || 3000, () => {
-        console.log("Server Started on 3000 !!");
-          })
+        app.listen(process.env.PORT || 3000,(err)=>{
+            if(err)
+            {
+                  console.log(err);
+            }else{
+                  console.log('Server started')
+              }
+    })
       } 
 )
